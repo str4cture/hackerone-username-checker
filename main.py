@@ -5,7 +5,6 @@ def check_username(username):
     url = f"https://hackerone.com/{username}"
     try:
         response = requests.get(url)
-        # HackerOne returns 404 if the profile doesn't exist
         if response.status_code == 404:
             return True
         else:
